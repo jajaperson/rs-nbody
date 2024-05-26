@@ -143,15 +143,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6c8640c5d730cb13ebd907d8d04b52f55ac9a2eec55b440c8892f40d56c76c1d"
 
 [[package]]
-name = "nbody2"
-version = "0.1.0"
-dependencies = [
- "clap",
- "csv",
- "serde",
-]
-
-[[package]]
 name = "proc-macro2"
 version = "1.0.83"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -167,6 +158,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0fa76aaf39101c457836aec0ce2316dbdc3ab723cdda1c6bd4e6ad4208acaca7"
 dependencies = [
  "proc-macro2",
+]
+
+[[package]]
+name = "rs-nbody"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "csv",
+ "serde",
 ]
 
 [[package]]
