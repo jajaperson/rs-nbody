@@ -57,11 +57,11 @@ impl World {
                 .sum();
             self.bodies[i].velocity += acceleration * tick_duration;
         }
-        self.time += tick_duration;
         // Integrate velocities
         for body in &mut self.bodies {
             body.position += body.velocity * tick_duration
         }
+        self.time += tick_duration;
     }
 
     pub fn time(&self) -> f64 {

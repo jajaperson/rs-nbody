@@ -85,6 +85,7 @@ impl World {
         for body in &mut self.bodies {
             body.position -= r_position;
             body.velocity -= r_velocity;
+            body.next_velocity -= r_velocity;
         }
     }
 }

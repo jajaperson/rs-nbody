@@ -9,20 +9,21 @@ use clap::{command, Parser, ValueHint};
 use serde::{Deserialize, Serialize};
 use vec3::{Point3, Vec3};
 
-/// Basic implementation of an N-body simulator
+/// Basic implementation of an N-body simulator.
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
 struct Args {
-    /// File containing simulation initial conditions
+    /// File containing simulation initial conditions. Must contain headers `pos_x`, `pos_y`,
+    /// `pos_z`, `vel_x`, `vel_y`, `vel_z`, `mass`.
     #[arg(short, long, value_hint = ValueHint::FilePath)]
     file: String,
-    /// Tick duration
+    /// Tick duration.
     #[arg(short, long, default_value_t = 1e-3)]
     tick: f64,
-    /// Simulation method
+    /// Simulation method.
     #[clap(short, long, default_value_t, value_enum)]
     sim: SimType,
-    /// Duration of simulation
+    /// Duration of simulation.
     #[arg(short, long)]
     dur: f64,
     /// If specified, the final output will be presented in the rest frame of the body at this

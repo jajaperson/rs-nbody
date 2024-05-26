@@ -76,6 +76,7 @@ impl World {
                 .enumerate()
                 .filter_map(|(j, b)| (i != j).then(|| self.bodies[i].acceleration(b))) // forces from all bodies except itself
                 .sum();
+            // v[1/2] = v[0] + 1/2 * δt * a[n+1]
             self.bodies[i].velocity += acceleration * tick_duration / 2.;
         }
     }
